@@ -92,7 +92,7 @@ class MywordsRmcommonPreload
             return $links;
         }
 
-        parse_str($url);
+        parse_str($url, $output);
         if (!isset($id) || $id <= 0) {
             return $links;
         }
@@ -212,7 +212,7 @@ class MywordsRmcommonPreload
         unset($editors);
         unset($table);
 
-        RMTemplate::get()->add_jquery();
+        RMTemplate::getInstance()->add_jquery();
 
         $feed = ['data' => $data, 'options' => $options];
         $feeds[] = $feed;
