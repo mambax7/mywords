@@ -98,7 +98,7 @@ class mwfunctions
      */
     public static function include_required_files($toolbar = true)
     {
-        RMTemplate::get()->add_style('admin.min.css', 'mywords', ['id' => 'admin-js']);
+        RMTemplate::getInstance()->add_style('admin.min.css', 'mywords', ['id' => 'admin-js']);
     }
 
     /**
@@ -383,7 +383,7 @@ class mwfunctions
         $xoopsTpl->assign('lang_password', __('Password:', 'mywords'));
         $xoopsTpl->assign('lang_submit', __('Show Post', 'mywords'));
 
-        return $xoopsTpl->fetch('db:mywords_password.html');
+        return $xoopsTpl->fetch('db:mywords_password.tpl');
     }
 
     /**

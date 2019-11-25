@@ -52,7 +52,7 @@ function mywordsBlockCats($options)
         $block['categos'][] = $ret;
     }
 
-    RMTemplate::get()->add_style('mwblocks.css', 'mywords');
+    RMTemplate::getInstance()->add_style('mwblocks.css', 'mywords');
 
     return $block;
 }

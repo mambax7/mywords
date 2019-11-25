@@ -1,4 +1,4 @@
-<?php RMTemplate::get()->add_script(RMCURL . '/include/js/jquery.validate.min.js'); ?>
+<?php RMTemplate::getInstance()->add_script(RMCURL . '/include/js/jquery.validate.min.js'); ?>
 <h1 class="cu-section-title"><?php _e('Categories', 'mywords'); ?></h1>
 <div class="row">
 
@@ -140,5 +140,5 @@
             <?php echo $xoopsSecurity->getTokenHTML(); ?>
         </form>
     </div>
-    
+
 </div>

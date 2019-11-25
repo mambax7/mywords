@@ -28,7 +28,7 @@
 require __DIR__ . '/header.php';
 $common->location = 'categories';
 
-RMTemplate::get()->add_help(
+RMTemplate::getInstance()->add_help(
     'Uso de las categorías',
     'http://www.xoopsmexico.net/docs/mywords/categorias/'
 );
@@ -88,7 +88,7 @@ function showCategos()
 
     MWFunctions::include_required_files();
 
-    RMTemplate::get()->add_head(
+    RMTemplate::getInstance()->add_head(
         '<script type="text/javascript">
             function cat_del_confirm(cat, id){
 
@@ -119,10 +119,10 @@ function showCategos()
     $name = '';
     $shortcut = '';
     extract($_GET);
-    include RMTemplate::get()->get_template('admin/mywords-categories.php', 'module', 'mywords');
-    RMTemplate::get()->assign('xoops_pagetitle', __('Categories Management', 'mywords'));
-    RMTemplate::get()->add_script('jquery.checkboxes.js', 'rmcommon');
-    RMTemplate::get()->add_script('../include/js/categories.js');
+    include RMTemplate::getInstance()->get_template('admin/mywords-categories.php', 'module', 'mywords');
+    RMTemplate::getInstance()->assign('xoops_pagetitle', __('Categories Management', 'mywords'));
+    RMTemplate::getInstance()->add_script('jquery.checkboxes.js', 'rmcommon');
+    RMTemplate::getInstance()->add_script('../include/js/categories.js');
 
     xoops_cp_footer();
 }

@@ -28,7 +28,7 @@
 require __DIR__ . '/header.php';
 $common->location = 'trackbacks';
 
-RMTemplate::get()->assign('xoops_pagetitle', __('Trackbacks management', 'mw_categories'));
+RMTemplate::getInstance()->assign('xoops_pagetitle', __('Trackbacks management', 'mw_categories'));
 
 function show_mw_trackbacks()
 {
@@ -78,14 +78,14 @@ function show_mw_trackbacks()
     $trackbacks = RMEvents::get()->run_event('mywords.trackbacks.list', $trackbacks);
 
     MWFunctions::include_required_files();
-    RMTemplate::get()->add_script(RMCURL . '/include/js/jquery.checkboxes.js');
-    RMTemplate::get()->add_script(XOOPS_URL . '/modules/mywords/include/js/scripts.php?file=trackbacks.js');
+    RMTemplate::getInstance()->add_script(RMCURL . '/include/js/jquery.checkboxes.js');
+    RMTemplate::getInstance()->add_script(XOOPS_URL . '/modules/mywords/include/js/scripts.php?file=trackbacks.js');
 
     RMBreadCrumb::get()->add_crumb(__('Trackbacks', 'mywords'));
 
     xoops_cp_header();
 
-    include RMTemplate::get()->get_template('admin/mywords-trackbacks.php', 'module', 'mywords');
+    include RMTemplate::getInstance()->get_template('admin/mywords-trackbacks.php', 'module', 'mywords');
 
     xoops_cp_footer();
 }

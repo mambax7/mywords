@@ -28,7 +28,7 @@
 require __DIR__ . '/header.php';
 $common->location = 'tags';
 
-RMTemplate::get()->add_help(
+RMTemplate::getInstance()->add_help(
     'Etiqueta',
     'http://www.xoopsmexico.net/docs/mywords/etiquetas/'
 );
@@ -42,7 +42,7 @@ function show_tags()
 
     MWFunctions::include_required_files();
 
-    RMTemplate::get()->assign('xoops_pagetitle', __('Tags Management', 'mywords'));
+    RMTemplate::getInstance()->assign('xoops_pagetitle', __('Tags Management', 'mywords'));
 
     // More used tags
     $db = XoopsDatabaseFactory::getDatabaseConnection();
@@ -81,10 +81,10 @@ function show_tags()
     RMBreadCrumb::get()->add_crumb(__('Tags management', 'mywords'));
 
     xoops_cp_header();
-    RMTemplate::get()->add_script(RMCURL . '/include/js/jquery.checkboxes.js');
-    RMTemplate::get()->add_script('..//include/js/scripts.php?file=tags-list.js');
-    RMTemplate::get()->add_style('jquery.css', 'rmcommon');
-    include RMTemplate::get()->get_template('admin/mywords-tags.php', 'module', 'mywords');
+    RMTemplate::getInstance()->add_script(RMCURL . '/include/js/jquery.checkboxes.js');
+    RMTemplate::getInstance()->add_script('..//include/js/scripts.php?file=tags-list.js');
+    RMTemplate::getInstance()->add_style('jquery.css', 'rmcommon');
+    include RMTemplate::getInstance()->get_template('admin/mywords-tags.php', 'module', 'mywords');
 
     xoops_cp_footer();
 }
@@ -180,10 +180,10 @@ function edit_form()
     RMBreadCrumb::get()->add_crumb(__('Tags management', 'mywords'), 'tags.php');
     RMBreadCrumb::get()->add_crumb(__('Edit tag', 'mywords'));
 
-    RMTemplate::get()->assign('xoops_pagetitle', __('Editing Tag', 'mywords'));
+    RMTemplate::getInstance()->assign('xoops_pagetitle', __('Editing Tag', 'mywords'));
     xoops_cp_header();
     $show_edit = true;
-    include RMTemplate::get()->get_template('admin/mywords-tags.php', 'module', 'mywords');
+    include RMTemplate::getInstance()->get_template('admin/mywords-tags.php', 'module', 'mywords');
 
     xoops_cp_footer();
 }

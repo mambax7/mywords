@@ -90,8 +90,8 @@ RMBreadCrumb::get()->add_crumb(__('Dashboard', 'mywords'));
 
 require __DIR__ . '/menu.php';
 MWFunctions::include_required_files();
-RMTemplate::get()->add_script('../include/js/scripts.php?file=dashboard.js');
-RMTemplate::get()->add_help(__('MyWords Documentation', 'mywords'), 'http://www.xoopsmexico.net/docs/mywords/introduccion/');
+RMTemplate::getInstance()->add_script('../include/js/scripts.php?file=dashboard.js');
+RMTemplate::getInstance()->add_help(__('MyWords Documentation', 'mywords'), 'http://www.xoopsmexico.net/docs/mywords/introduccion/');
 
 // Other panels for dashboard
 $dashboardPanels = [];
@@ -100,9 +100,9 @@ $dashboardPanels = RMEvents::get()->trigger('mywords.dashboard.panels', $dashboa
 xoops_cp_header();
 
 // Show Templates
-RMTemplate::get()->add_body_class('dashboard');
+RMTemplate::getInstance()->add_body_class('dashboard');
 
 //$tpl->header();
-include RMtemplate::get()->get_template('admin/mywords-theindex.php', 'module', 'mywords');
+include RMTemplate::getInstance()->get_template('admin/mywords-theindex.php', 'module', 'mywords');
 //$tpl->footer();
 xoops_cp_footer();

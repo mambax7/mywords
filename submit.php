@@ -49,7 +49,7 @@ if (!$xoopsUser->isAdmin() && !$author->from_user($xoopsUser->uid())) {
     die();
 }
 
-RMTemplate::get()->add_jquery();
+RMTemplate::getInstance()->add_jquery();
 
 $edit = isset($edit) ? $edit : 0;
 
@@ -90,10 +90,10 @@ $editor = new RMFormEditor('', 'content', '100%', '300px', $edit ? $post->getVar
 $editor->setExtra('required');
 $meta_names = MWFunctions::get()->get_metas();
 
-RMTemplate::get()->add_style('submit.css', 'mywords');
-RMTemplate::get()->add_script('scripts.php?file=posts.js', 'mywords', ['directory' => 'include']);
-RMTemplate::get()->add_script('jquery.validate.min.js', 'rmcommon', ['footer' => 1]);
+RMTemplate::getInstance()->add_style('submit.css', 'mywords');
+RMTemplate::getInstance()->add_script('scripts.php?file=posts.js', 'mywords', ['directory' => 'include']);
+RMTemplate::getInstance()->add_script('jquery.validate.min.js', 'rmcommon', ['footer' => 1]);
 
-include RMTemplate::get()->get_template('mywords-submit-form.php', 'module', 'mywords');
+include RMTemplate::getInstance()->get_template('mywords-submit-form.php', 'module', 'mywords');
 
 require __DIR__ . '/footer.php';

@@ -37,7 +37,7 @@ function mywords_widget_addtags($post = null)
     global $xoopsModuleConfig, $xoopsUser, $allowed_tags;
 
     $widget['title'] = __('Add Tags', 'admin_mywords');
-    RMTemplate::get()->add_script(XOOPS_URL . '/modules/mywords/include/js/scripts.php?file=tags.js');
+    RMTemplate::getInstance()->add_script(XOOPS_URL . '/modules/mywords/include/js/scripts.php?file=tags.js');
     $widget['icon'] = '';
 
     $edit = false;

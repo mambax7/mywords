@@ -38,7 +38,7 @@ function show_editors()
 
     MWFunctions::include_required_files();
 
-    RMTemplate::get()->assign('xoops_pagetitle', __('Editors Management', 'mywords'));
+    RMTemplate::getInstance()->assign('xoops_pagetitle', __('Editors Management', 'mywords'));
     require_once RMCPATH . '/class/form.class.php';
 
     foreach ($_REQUEST as $k => $v) {
@@ -71,9 +71,9 @@ function show_editors()
     RMBreadCrumb::get()->add_crumb(__('Editors Management', 'mywords'));
 
     xoops_cp_header();
-    RMTemplate::get()->add_script(RMCURL . '/include/js/jquery.checkboxes.js');
-    RMTemplate::get()->add_script('../include/js/scripts.php?file=editors.js');
-    include RMTemplate::get()->get_template('admin/mywords-editors.php', 'module', 'mywords');
+    RMTemplate::getInstance()->add_script(RMCURL . '/include/js/jquery.checkboxes.js');
+    RMTemplate::getInstance()->add_script('../include/js/scripts.php?file=editors.js');
+    include RMTemplate::getInstance()->get_template('admin/mywords-editors.php', 'module', 'mywords');
 
     xoops_cp_footer();
 }
@@ -100,14 +100,14 @@ function edit_editor()
 
     MWFunctions::include_required_files();
 
-    RMTemplate::get()->assign('xoops_pagetitle', __('Editing Editor', 'mywords'));
+    RMTemplate::getInstance()->assign('xoops_pagetitle', __('Editing Editor', 'mywords'));
 
     RMBreadCrumb::get()->add_crumb(__('Editors Management', 'mywords'), 'editors.php');
     RMBreadCrumb::get()->add_crumb(__('Edit Editor', 'mywords'));
 
     xoops_cp_header();
     $show_edit = true;
-    include RMTemplate::get()->get_template('admin/mywords-editors.php', 'module', 'mywords');
+    include RMTemplate::getInstance()->get_template('admin/mywords-editors.php', 'module', 'mywords');
     xoops_cp_footer();
 }
 

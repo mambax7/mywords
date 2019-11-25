@@ -285,7 +285,7 @@ $xoopsTpl->assign('enable_images', $xoopsModuleConfig['post_imgs']);
 //Trackback
 if ($post->getVar('pingstatus')) {
     $tb = new MWTrackback($xoopsConfig['sitename'], $editor->getVar('name'));
-    RMTemplate::get()->add_head(
+    RMTemplate::getInstance()->add_head(
         $tb->rdf_autodiscover(date('r', $post->getVar('pubdate')), $post->getVar('title'), TextCleaner::getInstance()->truncate($post->content(true), 255), $post->permalink(), MWFunctions::get_url(true) . $post->id(), $editor->getVar('name'))
     );
 }

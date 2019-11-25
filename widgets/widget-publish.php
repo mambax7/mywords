@@ -39,11 +39,11 @@ function mywords_widget_publish($post = null, $frontend = false)
     global $xoopsUser;
 
     RMTemplate::getInstance()->add_style('widget-publish.min.css', 'mywords');
-    RMTemplate::get()->add_style('forms.min.css', 'rmcommon');
-    RMTemplate::get()->add_style('jquery.css', 'rmcommon');
-    RMTemplate::get()->add_script('scripts.php?file=posts.js', 'mywords', ['directory' => 'include', 'footer' => 1]);
-    RMTemplate::get()->add_script(XOOPS_URL . '/modules/mywords/include/js/mktime.js');
-    RMTemplate::get()->add_script('forms.js', 'rmcommon');
+    RMTemplate::getInstance()->add_style('forms.min.css', 'rmcommon');
+    RMTemplate::getInstance()->add_style('jquery.css', 'rmcommon');
+    RMTemplate::getInstance()->add_script('scripts.php?file=posts.js', 'mywords', ['directory' => 'include', 'footer' => 1]);
+    RMTemplate::getInstance()->add_script(XOOPS_URL . '/modules/mywords/include/js/mktime.js');
+    RMTemplate::getInstance()->add_script('forms.js', 'rmcommon');
     $widget['title'] = __('Publish', 'mywords');
     $widget['icon'] = '';
 

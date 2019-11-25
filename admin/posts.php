@@ -42,7 +42,7 @@ function showPosts($aprovado = -1)
 {
     global $db, $xoopsSecurity, $xoopsModule, $xoopsModuleConfig, $common;
 
-    $mc = &$xoopsModuleConfig;
+    $mc =& $xoopsModuleConfig;
 
     $keyw = '';
     $op = '';
@@ -138,7 +138,7 @@ function showPosts($aprovado = -1)
     list($pending_count) = $db->fetchRow($db->query($sql));
 
     // Confirm message
-    RMTemplate::get()->add_head(
+    RMTemplate::getInstance()->add_head(
         '<script type="text/javascript">
         function post_del_confirm(post, id){
             var string = "' . __('Do you really want to delete \"%s\"', 'mywords') . '";
@@ -155,7 +155,7 @@ function showPosts($aprovado = -1)
      </script>'
     );
 
-    RMTemplate::get()->add_script(RMCURL . '/include/js/jquery.checkboxes.js');
+    RMTemplate::getInstance()->add_script(RMCURL . '/include/js/jquery.checkboxes.js');
     MWFunctions::include_required_files();
 
     $title_by_status = '';
@@ -174,10 +174,10 @@ function showPosts($aprovado = -1)
     if ('' != $title_by_status) {
         RMBreadCrumb::get()->add_crumb(__('Posts management', 'mywords'), 'posts.php');
         RMBreadCrumb::get()->add_crumb($title_by_status);
-        RMTemplate::get()->assign('xoops_pagetitle', sprintf(__('Posts Management: %s', 'mywords'), $title_by_status));
+        RMTemplate::getInstance()->assign('xoops_pagetitle', sprintf(__('Posts Management: %s', 'mywords'), $title_by_status));
     } else {
         RMBreadCrumb::get()->add_crumb(__('Posts management', 'mywords'));
-        RMTemplate::get()->assign('xoops_pagetitle', __('Posts Management', 'mywords'));
+        RMTemplate::getInstance()->assign('xoops_pagetitle', __('Posts Management', 'mywords'));
     }
 
     xoops_cp_header();
@@ -217,7 +217,7 @@ function newForm($edit = 0)
 
     RMBreadCrumb::get()->add_crumb(__('Posts', 'mywords'), 'posts.php');
     RMBreadCrumb::get()->add_crumb(__('Write post', 'mywords'));
-    RMTemplate::get()->assign('xoops_pagetitle', __('Write post', 'mywords'));
+    RMTemplate::getInstance()->assign('xoops_pagetitle', __('Write post', 'mywords'));
 
     $head = '<script type="text/javascript" src="' . MW_URL . '/include/forms_post.js"></script>';
     xoops_cp_header($head);
@@ -233,9 +233,9 @@ function newForm($edit = 0)
 
     // Get current metas
     $meta_names = MWFunctions::get()->get_metas();
-    //RMTemplate::get()->add_script(RMCURL.'/include/js/jquery.validate.min.js');
-    //RMTemplate::get()->add_script(RMCURL.'/include/js/forms.js');
-    //RMTemplate::get()->add_head('<script type="text/javascript">$("form#mw-form-posts").validate();</script>');
+    //RMTemplate::getInstance()->add_script(RMCURL.'/include/js/jquery.validate.min.js');
+    //RMTemplate::getInstance()->add_script(RMCURL.'/include/js/forms.js');
+    //RMTemplate::getInstance()->add_head('<script type="text/javascript">$("form#mw-form-posts").validate();</script>');
 
     require  dirname(__DIR__) . '/templates/admin/mywords-formposts.php';
 
