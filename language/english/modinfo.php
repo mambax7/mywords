@@ -19,6 +19,10 @@ if (!function_exists('__')) {
     }
 }
 
+if (!defined('RMCURL')) {
+    define('RMCURL', XOOPS_URL . '/modules/rmcommon');
+}
+
 define('_MI_MW_DESC', __('Module for publishing and management of news and blogs', 'mywords'));
 
 define('_MI_MW_AMENU1', __('Module Status', 'mywords'));

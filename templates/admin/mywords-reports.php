@@ -48,7 +48,7 @@
                     <?php echo $common->icons()->getIcon('svg-rmcommon-eye'); ?>
                 </th>
                 <th class="text-center">
-                    <?php _E('Options', 'mywords'); ?>
+                    <?php _e('Options', 'mywords'); ?>
                 </th>
             </tr>
             </thead>
